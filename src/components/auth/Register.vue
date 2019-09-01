@@ -129,6 +129,7 @@ export default {
                 'password': this.user.password
             })
             .then(response => {
+                console.log('response', response);
                 if (response.data.status == 'unlogin') 
                 {
                     vm.frameErr = true;
@@ -142,6 +143,21 @@ export default {
                     vm.message = e.response.responseText;
                     vm.valRegister = 'Try Again';
                     vm.disRegister = false;
+                }
+                if (response.data.status === 'invalide') 
+                {
+                    vm.valLogin = 'Try again';
+                    vm.disLogin = false;
+                    if (response.data.message.email[0]) 
+                    {
+                        vm.frameErrEmail = true;
+                        vm.messageEmail = response.data.message.email[0];
+                    }
+                    if (response.data.message.password[0]) 
+                    {
+                        vm.frameErrPass = true;
+                        vm.messagePass = response.data.message.password[0];
+                    }
                 }
                 if (response.data.status === 'email-invalide') 
                 {
@@ -181,7 +197,7 @@ export default {
                 vm.message = e.response.responseText;
                 vm.valRegister = 'Try Again';
                 vm.disRegister = false;
-                console.log(e.response);
+                console.log('error', e);
             });
         }
     },
