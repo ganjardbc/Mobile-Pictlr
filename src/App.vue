@@ -178,7 +178,7 @@ export default {
 </script>
 
 <style>
-    @import url('./assets/icons/fontawesome/css/all.min.css');
-    /* @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css'); */
+    /* @import url('./assets/icons/fontawesome/css/all.min.css'); */
+    @import url('https://use.fontawesome.com/releases/v5.7.2/css/all.css');
 	@import url('./assets/sass/app.css');
 </style>
