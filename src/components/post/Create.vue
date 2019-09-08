@@ -520,8 +520,9 @@ export default {
                         this.dt.description = '';
                         this.dt.tags = '';
                         this.$openMessageYesNo('Design published, view now?', function () {
-                            vm.$router.push('/post/'+response.data.idbookmark);
+                            // vm.$router.push('/post/'+response.data.idbookmark);
                             // window.location = '/post/'+response.data.idbookmark;
+                            vm.$router.replace({name: 'visit-post', params: {idbookmark: response.data.idbookmark}});
                         });
                     } 
                     else 

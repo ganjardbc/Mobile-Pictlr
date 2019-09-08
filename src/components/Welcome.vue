@@ -47,7 +47,7 @@
                             An virtual canvas.
                         </p>
                     </div>
-                    <div>
+                    <div class="margin-bottom-10px">
                         <p class="txt-site txt-12 txt-thin txt-main">
                             Join pictlr today.
                         </p>
@@ -69,15 +69,6 @@
         </div>
         <div class="w-bot">
             <ul class="txt-site txt-11 txt-main txt-center">
-                <li>
-                    <router-link to="/trendings">Trendings</router-link>
-                </li>
-                <li>
-                    <router-link to="/fresh">Fresh</router-link>
-                </li>
-                <li>
-                    <router-link to="/populars">Populars</router-link>
-                </li>
                 <li>
                     <a href="#">About Us</a>
                 </li>

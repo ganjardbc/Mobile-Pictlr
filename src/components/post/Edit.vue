@@ -469,7 +469,8 @@ export default {
                         window.location = '/design/'+response.data.idbookmark;
                     });*/
                     //this.$openMessageOk(response.data.message);
-                    window.location = '/post/'+response.data.idbookmark;
+                    // window.location = '/post/'+response.data.idbookmark;
+                    vm.$router.replace({name: 'visit-post', params: {idbookmark: response.data.idbookmark}});
                 } else {
                     this.$openMessageOk(response.data.message);
                 }

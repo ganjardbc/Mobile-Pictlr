@@ -188,7 +188,11 @@ export default {
                     this.idcanvas = response.data.idcanvas;
                     this.$openMessageYesNo('Canvas edited, visit now?', function () {
                         //vm.$router.push('/'+vm.$cookie.get('username')+'/canvas/'+vm.idcanvas);
-                        window.location = '/'+vm.$cookie.get('username')+'/canvas/'+vm.idcanvas;
+                        // window.location = '/'+vm.$cookie.get('username')+'/canvas/'+vm.idcanvas;
+                        vm.$router.replace({name: 'visit-canvas', params: {
+                            username: vm.$cookie.get('username'),
+                            idcanvas: vm.idcanvas
+                        }});
                     });
                 } else {
                     this.$openMessageOk(response.data.message);

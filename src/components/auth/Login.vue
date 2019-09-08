@@ -135,7 +135,7 @@ export default {
                     this.$cookie.set('username', response.data.me.username, 2);
                     this.$cookie.set('foto', response.data.me.foto, 2);
                     // window.location = vm.initUrl;
-                    this.$router.replace({name: 'home'});
+                    this.$router.go({name: 'home'});
                 }
             })
             .catch(e => {

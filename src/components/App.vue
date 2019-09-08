@@ -33,7 +33,7 @@
             <div class="app-nav">
                 <ul>
                     <li>
-                        <router-link :to="{name: 'home'}" :class="navHome">
+                        <router-link :to="{name: (this.$cookie.get('jwt')) ? 'home' : 'welcome' }" :class="navHome">
                             <div class="an-icn">
                                 <i class="fa fa-lg fa-home"></i>
                                 <div class="txt-site txt-9">Home</div>
@@ -55,7 +55,7 @@
                         </div>
                     </li> -->
                     <li>
-                        <router-link :to="{name: 'notifications'}" :class="navNotif">
+                        <router-link :to="{name: (this.$cookie.get('jwt')) ? 'notifications' : 'welcome' }" :class="navNotif">
                             <div class="an-icn">
                                 <i class="fas fa-lg fa-bell"></i>
                                 <div class="txt-site txt-9">Notifications</div>
@@ -64,7 +64,7 @@
                     </li>
                     <li>
                         <router-link :to="{
-                                name: 'user', 
+                                name: (this.$cookie.get('jwt')) ? 'user' : 'welcome', 
                                 params: {
                                     username: $cookie.get('username')
                                 }

@@ -18,66 +18,66 @@ window.axios = axios
 window.$ = jquery
 
 /*prototype*/
-Vue.prototype.initUrl = window.location.protocol+'//'+window.location.host;
-Vue.prototype.baseUrl = 'https://kebunbegonialembang.com/pictlr-api/public';
+Vue.prototype.initUrl = window.location.protocol+'//'+window.location.host
+Vue.prototype.baseUrl = 'https://kebunbegonialembang.com/pictlr-api/public'
 
-Vue.prototype.urlThumbnailProfile = Vue.prototype.baseUrl+'/img/profile/thumbnails/';
-Vue.prototype.urlFotoProfile = Vue.prototype.baseUrl+'/img/profile/photos/';
-Vue.prototype.urlThumbnailStory = Vue.prototype.baseUrl+'/img/story/thumbnails/';
-Vue.prototype.urlFotoStory = Vue.prototype.baseUrl+'/img/story/covers/';
+Vue.prototype.urlThumbnailProfile = Vue.prototype.baseUrl+'/img/profile/thumbnails/'
+Vue.prototype.urlFotoProfile = Vue.prototype.baseUrl+'/img/profile/photos/'
+Vue.prototype.urlThumbnailStory = Vue.prototype.baseUrl+'/img/story/thumbnails/'
+Vue.prototype.urlFotoStory = Vue.prototype.baseUrl+'/img/story/covers/'
 
 
 //message popup
 Vue.prototype.$hidePopup = function () {
-  $('.frame-popup').hide();
-};
+  $('.frame-popup').hide()
+}
 Vue.prototype.$openMessageYesNo = function (msg, eks = function () {} ) {
-  $('#message-yesno').show();
-  $('#message-yesno #msg').html(msg);
+  $('#message-yesno').show()
+  $('#message-yesno #msg').html(msg)
   $('#message-yesno ul .ml-ch').on('click', function (e) {
-      var tr = e.target.attributes[0].value;
+      var tr = e.target.attributes[0].value
       if (tr == "yes") {
-          $('#message-yesno').hide();
-          return eks();
+          $('#message-yesno').hide()
+          return eks()
       } else {
-          $('#message-yesno').hide();
+          $('#message-yesno').hide()
       }
-  });
-};
+  })
+}
 Vue.prototype.$openMessageLoading = function (stt, msg = '') {
   if (stt == 'open') {
-      $('#message-loading').show().find('#msg').html(msg);
+      $('#message-loading').show().find('#msg').html(msg)
   } else {
-      $('#message-loading').hide().find('#msg').html('');
+      $('#message-loading').hide().find('#msg').html('')
   }
-};
+}
 Vue.prototype.$openMessageBottom = function (stt, msg = '') {
   if (stt == 'open') {
-      $('#message-bottom').slideDown().delay(1500).fadeOut(1500);
-      $('#message-bottom').find('#msg').html(msg);
+      $('#message-bottom').slideDown().delay(1500).fadeOut(1500)
+      $('#message-bottom').find('#msg').html(msg)
   } else {
-      $('#message-bottom').hide();
-      $('#message-bottom').find('#msg').html('');
+      $('#message-bottom').hide()
+      $('#message-bottom').find('#msg').html('')
   }
-};
+}
 Vue.prototype.$openMessageOk = function (msg) {
-  $('#message-ok').show().find('#msg').html(msg);
-};
+  $('#message-ok').show().find('#msg').html(msg)
+}
 Vue.prototype.$hideMessage = function () {
-  $('.frame-message').hide();
-};
+  $('.frame-message').hide()
+}
 Vue.prototype.$goBack = function () {
   if (window.history.length > 1) {
       this.$router.back()
   } else {
       this.$router.push('/')
   }
-};
+}
 
 //canvas
 //watch
 Vue.prototype.saveWatch = function (id, iduser, idcanvas) {
-  var vm = this;
+  var vm = this
   axios.post(
       vm.baseUrl+'/api/watch/save?token='+vm.$cookie.get('jwt'),
       {
@@ -95,10 +95,10 @@ Vue.prototype.saveWatch = function (id, iduser, idcanvas) {
           .addClass('btn-main-color')
           .find('#icn')
           .removeClass('fa-check')
-          .addClass('fa-plus');
+          .addClass('fa-plus')
           $('.watch-'+idcanvas)
           .find('#ttl')
-          .html('Watch');
+          .html('Watch')
       }
       if (response.data.status == 'failedremove') 
       {
@@ -108,45 +108,45 @@ Vue.prototype.saveWatch = function (id, iduser, idcanvas) {
           .addClass('btn-grey2-color')
           .find('#icn')
           .removeClass('fa-plus')
-          .addClass('fa-check');
+          .addClass('fa-check')
           $('.watch-'+idcanvas)
           .find('#ttl')
-          .html('Unwatch');
+          .html('Unwatch')
       }
       if (response.data.status == 'denied') 
       {
-          vm.$openMessageOk(response.data.message);
+          vm.$openMessageOk(response.data.message)
       } 
       else 
       {
-          vm.$openMessageBottom('open', response.data.message);
+          vm.$openMessageBottom('open', response.data.message)
       }
   })
   .catch(e => {
       if (e.response.responseText) 
       {
-          vm.$openMessageBottom('open', e.response.responseText);   
+          vm.$openMessageBottom('open', e.response.responseText)   
       } 
       else 
       {
-          vm.$openMessageBottom('open', e.response.statusText);
+          vm.$openMessageBottom('open', e.response.statusText)
       }
-      console.log(e.response);
+      console.log(e.response)
       
-  });
+  })
 }
 
 Vue.prototype.$watchPaper = function (id, iduser, idcanvas) {
   if (id == null) 
   {
-      this.$openMessageOk('Please login to your account');
+      this.$openMessageOk('Please login to your account')
   } 
   else 
   {
-      var vm = this;
-      var tr = $('.watch-'+idcanvas).attr('id');
+      var vm = this
+      var tr = $('.watch-'+idcanvas).attr('id')
 
-      this.$openMessageBottom('hide');
+      this.$openMessageBottom('hide')
 
       if (tr == 'unwatch') 
       {
@@ -156,12 +156,12 @@ Vue.prototype.$watchPaper = function (id, iduser, idcanvas) {
           .addClass('btn-grey2-color')
           .find('#icn')
           .removeClass('fa-plus')
-          .addClass('fa-check');
+          .addClass('fa-check')
           $('.watch-'+idcanvas)
           .find('#ttl')
-          .html('Unwatch');
+          .html('Unwatch')
           
-          this.saveWatch(id, iduser, idcanvas);
+          this.saveWatch(id, iduser, idcanvas)
       } 
       else 
       {
@@ -172,61 +172,61 @@ Vue.prototype.$watchPaper = function (id, iduser, idcanvas) {
               .addClass('btn-main-color')
               .find('#icn')
               .removeClass('fa-check')
-              .addClass('fa-plus');
+              .addClass('fa-plus')
               $('.watch-'+idcanvas)
               .find('#ttl')
-              .html('Watch');
+              .html('Watch')
 
-              vm.saveWatch(id, iduser, idcanvas);
-          });
+              vm.saveWatch(id, iduser, idcanvas)
+          })
       }
       
   }
-};
+}
 
 //delete
 Vue.prototype.$deleteDesign = function (idbookmark) {
-  var a = confirm('Delete this design?');
+  var a = confirm('Delete this design?')
   if (a) {
       //this.$openMessageYesNo('Delete this design?', function () {
-      this.$openMessageLoading('open', 'Deleting design');
+      this.$openMessageLoading('open', 'Deleting design')
       axios.post(this.baseUrl+'/api/bookmark/delete?token='+this.$cookie.get('jwt'), {
           'idbookmark': idbookmark,
       })
       .then(response => {
-          this.$openMessageLoading('hide');
+          this.$openMessageLoading('hide')
           if (response.data.status == 'successful') {
-              this.$openMessageBottom('open', response.data.message);
+              this.$openMessageBottom('open', response.data.message)
           } else {
-              this.$openMessageBottom('open', response.data.message);
+              this.$openMessageBottom('open', response.data.message)
           }
       })
       .catch(e => {
-          this.$openMessageLoading('hide');
-          this.$openMessageBottom('open', e.response.statusText);
-      });
-      //});
+          this.$openMessageLoading('hide')
+          this.$openMessageBottom('open', e.response.statusText)
+      })
+      //})
   }
 }
 Vue.prototype.$deletePaper = function (idcanvas) {
-  //var vm = this;
-  var a = confirm('Delete this canvas permanently?');
+  //var vm = this
+  var a = confirm('Delete this canvas permanently?')
   if (a) 
   {
       //this.$openMessageYesNo('Delete this canvas permanently?', function () {
-      this.$openMessageLoading('open', 'Deleting canvas');
+      this.$openMessageLoading('open', 'Deleting canvas')
       axios.post(this.baseUrl+'/api/canvas/delete?token='+this.$cookie.get('jwt'), {
           'idcanvas': idcanvas,
       })
       .then(response => {
-          this.$openMessageLoading('hide');
-          this.$openMessageOk(response.data.message);
+          this.$openMessageLoading('hide')
+          this.$openMessageOk(response.data.message)
       })
       .catch(e => {
-          this.$openMessageLoading('hide');
-          this.$openMessageOk(e.response.statusText);
-      });
-      //});
+          this.$openMessageLoading('hide')
+          this.$openMessageOk(e.response.statusText)
+      })
+      //})
   }
 }
 
@@ -235,25 +235,25 @@ Vue.prototype.$goBack = function () {
   if (window.history.length > 1) {
       this.$router.back()
   } else {
-      this.$router.push('/')
+      this.$router.push({name: 'home'})
   }
-};
+}
 
 //logout
 Vue.prototype.$logOut = function () {
-  var a = confirm('Logout from your account?');
+  var a = confirm('Logout from your account?')
   if (a) 
   {
-    var vm = this;
-    vm.$cookie.delete('jwt');
-    vm.$cookie.delete('id');
-    vm.$cookie.delete('name');
-    vm.$cookie.delete('username');
-    vm.$cookie.delete('foto');
-    // window.location = vm.initUrl+'/welcome';
-    this.$router.replace({name: 'welcome'});
+    var vm = this
+    vm.$cookie.delete('jwt')
+    vm.$cookie.delete('id')
+    vm.$cookie.delete('name')
+    vm.$cookie.delete('username')
+    vm.$cookie.delete('foto')
+    // window.location = vm.initUrl+'/welcome'
+    this.$router.replace({name: 'welcome'})
   }
-};
+}
 
 /* eslint-disable no-new */
 new Vue({
