@@ -112,7 +112,7 @@
 		.top-tool {
 			position: relative;
 			width: 100%;
-			@include grid_2x(45px, 1fr);
+			@include grid_2x(40px, 1fr);
 			@include grid_gap(10px);
 			.tt-col-1 {
 				@include column_n(1);

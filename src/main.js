@@ -19,7 +19,7 @@ window.$ = jquery
 
 /*prototype*/
 Vue.prototype.initUrl = window.location.protocol+'//'+window.location.host;
-Vue.prototype.baseUrl = 'https://pictlr.kebunbegonialembang.com';
+Vue.prototype.baseUrl = 'https://kebunbegonialembang.com/pictlr-api/public';
 
 Vue.prototype.urlThumbnailProfile = Vue.prototype.baseUrl+'/img/profile/thumbnails/';
 Vue.prototype.urlFotoProfile = Vue.prototype.baseUrl+'/img/profile/photos/';
@@ -244,13 +244,14 @@ Vue.prototype.$logOut = function () {
   var a = confirm('Logout from your account?');
   if (a) 
   {
-      var vm = this;
-      vm.$cookie.delete('jwt');
-      vm.$cookie.delete('id');
-      vm.$cookie.delete('name');
-      vm.$cookie.delete('username');
-      vm.$cookie.delete('foto');
-      window.location = vm.initUrl+'/welcome';
+    var vm = this;
+    vm.$cookie.delete('jwt');
+    vm.$cookie.delete('id');
+    vm.$cookie.delete('name');
+    vm.$cookie.delete('username');
+    vm.$cookie.delete('foto');
+    // window.location = vm.initUrl+'/welcome';
+    this.$router.replace({name: 'welcome'});
   }
 };
 

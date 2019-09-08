@@ -281,7 +281,7 @@
 </template>
 <script>
 import FrameLoading from '../main/FrameLoading'
-import FrameRate from '..//main/FrameRate'
+import FrameRate from '../main/FrameRate'
 import FrameDesign from './Card'
 
 export default {

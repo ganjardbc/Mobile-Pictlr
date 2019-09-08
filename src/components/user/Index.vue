@@ -58,7 +58,7 @@
             <div v-if="frameProfile">
                 <div class="margin-20px">
                     <div class="frame-profile">
-                        <div class="profile">
+                        <div class="profile padding-top-15px">
                             <div class="info">
                                 <div>
                                     <h1>

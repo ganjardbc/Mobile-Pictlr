@@ -11,7 +11,7 @@
                                 <div class="tt-col-1">
                                     <router-link :to="{name: 'user', params: {username: dg.username}}">
                                         <div 
-                                            class="image image-45px image-circle"
+                                            class="image image-40px image-circle"
                                             :style="{
                                                 'background-image': 'url('+urlThumbnailProfile+dg.foto+')'
                                             }"></div>
@@ -54,11 +54,14 @@
 
                             <div class="mid-tool no-max-height">
                                 <div 
-                                    class="place-pict" 
+                                    class="place-pict"
+                                    :style="{
+                                        'padding-bottom': ((dg.height / dg.width) * 100)+'%'
+                                    }" 
                                     >
                                     <router-link :to="{name: 'visit-post', params: {idbookmark: dg.idbookmark}}">
                                         <div class="private-story"></div>
-                                        <img :src="urlFotoStory+dg.cover">
+                                        <img class="place-pict-image" :src="urlFotoStory+dg.cover">
                                     </router-link>
                                 </div>
                             </div>

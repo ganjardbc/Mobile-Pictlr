@@ -339,7 +339,7 @@
     transform: translate(-50%, -50%);
     width: 100%; }
   .image.no-bg-color {
-    background-color: rgba(0, 0, 0, 0); }
+    background-color: transparent; }
   .image.image-20px {
     width: 20px;
     height: 20px; }
@@ -465,7 +465,7 @@
   border-radius: 7.5px;
   z-index: 1; }
   .txt.txt-no-shadow {
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+    box-shadow: 0 0 0 0 transparent; }
   .txt.txt-shadow {
     box-shadow: 0 0 0 4px #529ecc; }
   .txt.txt-radius {
@@ -477,7 +477,7 @@
     background-color: #f5f5f5;
     color: rgba(0, 0, 0, 0.84); }
   .txt.txt-trans-color {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: rgba(0, 0, 0, 0.54); }
   .txt.txt-box-shadow {
     box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1); }
@@ -544,7 +544,7 @@
   .btn.btn-focus:focus {
     background-color: rgba(225, 225, 225, 0.54); }
   .btn.btn-no-focus:focus {
-    box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
+    box-shadow: 0 0 0 0 transparent; }
   .btn.btn-no-pad {
     padding: 0 0; }
   .btn.btn-upp {
@@ -565,7 +565,7 @@
     background-color: #bd081c;
     color: #fff; }
   .btn.btn-main2-color {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: rgba(0, 0, 0, 0.54); }
     .btn.btn-main2-color:hover {
       background-color: rgba(225, 225, 225, 0.54);
@@ -577,7 +577,7 @@
     background-color: #fff;
     color: #bd081c; }
   .btn.btn-main5-color {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: #529ecc; }
   .btn.btn-sekunder-color {
     background-color: #fff;
@@ -621,7 +621,7 @@
       background-color: rgba(225, 225, 225, 0.54);
       color: rgba(0, 0, 0, 0.84); }
   .btn.btn-no-color {
-    background-color: rgba(0, 0, 0, 0);
+    background-color: transparent;
     color: rgba(0, 0, 0, 0.54); }
   .btn.btn-color-fb {
     background-color: #44749d;
@@ -1607,8 +1607,8 @@
     width: 100%;
     display: grid;
     display: -ms-grid;
-    grid-template-columns: 45px 1fr;
-    -ms-grid-columns: 45px 1fr;
+    grid-template-columns: 40px 1fr;
+    -ms-grid-columns: 40px 1fr;
     grid-gap: 10px;
     -ms-grid-gap: 10px; }
     .frame-post .mid .top-tool .tt-col-1 {
@@ -2087,7 +2087,7 @@
       display: none; }
       .frame-small-paper .grid-3 .chk.selected {
         display: block;
-        background-color: rgba(0, 0, 0, 0);
+        background-color: transparent;
         color: #bd081c; }
     .frame-small-paper .grid-3 .btn {
       position: absolute;
