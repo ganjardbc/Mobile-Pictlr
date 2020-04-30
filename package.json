@@ -12,7 +12,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
-    "jquery": "^3.3.1",
+    "jquery": "^3.5.0",
     "vue": "^2.5.2",
     "vue-cookie": "^1.1.4",
     "vue-masonry-css": "^1.0.3",
