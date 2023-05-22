@@ -4,7 +4,7 @@
             <masonry 
                 :cols="{default: defaultCol, 1000: 4, 800: 3, 540: 2, 340: 1}"
                 :gutter="{default: 0, 1000: 0}">
-                <div v-for="dg in designs">
+                <div v-for="(dg, i) in designs" :key="i">
                     <div class="frame-post" :key="dg.idbookmark">
                         <div class="mid">
                             <div class="mid-tool">

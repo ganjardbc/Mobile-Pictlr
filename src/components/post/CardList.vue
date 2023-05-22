@@ -1,7 +1,7 @@
 <template>
     <div>
         <div v-if="placeDesign">
-            <div v-for="dg in designs" class="margin-20px">
+            <div v-for="(dg, i) in designs" :key="i" class="margin-20px">
 
                 <div class="frame-post" :key="dg.idbookmark">
                     <div class="fpt-col-2">
@@ -89,13 +89,6 @@
                                     <router-link :to="{name: 'visit-post', params: {idbookmark: dg.idbookmark}}">
                                         <button class="btn btn-circle btn-main2-color">
                                             <span class="icn far fa-lg fa-comment-alt"></span>
-                                        </button>
-                                    </router-link>
-                                    <router-link :to="{name: 'edit-post', params: {idbookmark: dg.idbookmark}}">
-                                        <button 
-                                            class="btn btn-circle btn-main2-color"
-                                            v-if="$cookie.get('id') == dg.id">
-                                            <span class="icn fa fa-lg fa-pencil-alt"></span>
                                         </button>
                                     </router-link>
                                     <button 

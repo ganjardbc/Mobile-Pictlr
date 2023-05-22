@@ -35,30 +35,30 @@
                     <li>
                         <router-link :to="{name: 'home'}" :class="navHome">
                             <div class="an-icn">
-                                <i class="txt-site txt-13 fa fa-lg fa-home"></i>
-                                <div class="txt-site txt-9">Home</div>
+                                <i class="txt-site txt-16 fa fa-lg fa-home"></i>
+                                <!-- <div class="txt-site txt-9">Home</div> -->
                             </div>
                         </router-link>
                     </li>
                     <li>
                         <router-link :to="{name: 'trendings'}" :class="navTrend">
                             <div class="an-icn">
-                                <i class="txt-site txt-13 fas fa-lg fa-compass"></i>
-                                <div class="txt-site txt-9">Trendings</div>
+                                <i class="txt-site txt-16 fas fa-lg fa-compass"></i>
+                                <!-- <div class="txt-site txt-9">Trendings</div> -->
                             </div>
                         </router-link>
                     </li>
-                    <!-- <li @click="openMenu">
+                    <li @click="openMenu">
                         <div class="an-icn">
-                            <i class="txt-site txt-13 fas fa-lg fa-plus"></i>
-                            <div class="txt-site txt-9">Create</div>
+                            <i class="txt-site txt-16 fas fa-lg fa-plus-circle"></i>
+                            <!-- <div class="txt-site txt-9">Create</div> -->
                         </div>
-                    </li> -->
+                    </li>
                     <li>
                         <router-link :to="{name: 'notifications'}" :class="navNotif">
                             <div class="an-icn">
-                                <i class="txt-site txt-13 fas fa-lg fa-bell"></i>
-                                <div class="txt-site txt-9">Notifications</div>
+                                <i class="txt-site txt-16 fas fa-lg fa-bell"></i>
+                                <!-- <div class="txt-site txt-9">Notifications</div> -->
                             </div>
                         </router-link>
                     </li>
@@ -71,8 +71,8 @@
                             }"
                             :class="navAccount">
                             <div class="an-icn">
-                                <i class="txt-site txt-13 fas fa-lg fa-user"></i>
-                                <div class="txt-site txt-9">Account</div>
+                                <i class="txt-site txt-16 fas fa-lg fa-user"></i>
+                                <!-- <div class="txt-site txt-9">Account</div> -->
                             </div>
                         </router-link>
                     </li>
